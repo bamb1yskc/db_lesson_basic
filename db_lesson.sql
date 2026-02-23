@@ -123,9 +123,47 @@ ORDER BY
 　そして当てはまるレコードをcreated_at（作成時間）順で並べています
 */
 
+-- 課題No7
+/*
+SELECT name
+FROM people
+WHERE (age BETWEEN 20 AND 29 AND gender = 2)
+OR (age BETWEEN 40 AND 49 AND gender = 1);
+*/
 
+-- 課題No8
+/*
+SELECT name, age
+FROM people
+WHERE department_id = 1
+ORDER BY age ASC;
+*/
 
+-- 課題No9
+/*
+SELECT AVG(age) AS average_age
+FROM people
+WHERE department_id = 2
+AND gender = 2;
+*/
 
+-- 課題No10
+/*
+SELECT p.name, d.name, r.content
+FROM people p
+JOIN departments d
+ON p.department_id = d.department_id
+JOIN reports r
+ON p.person_id = r.person_id;
+*/
+
+-- 課題No11
+
+SELECT p.name
+FROM people p
+LEFT JOIN reports r
+ON p.person_id = r.person_id
+WHERE r.content IS NULL;
 
 
 
